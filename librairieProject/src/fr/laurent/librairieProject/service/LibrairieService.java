@@ -1,5 +1,6 @@
 package fr.laurent.librairieProject.service;
 
+import fr.laurent.librairieProject.dao.DaoLibrairie;
 import fr.laurent.librairieProject.domaine.Librairie;
 import fr.laurent.librairieProject.domaine.Livre;
 import fr.laurent.librairieProject.domaine.Livre.TypeLivre;
@@ -9,10 +10,13 @@ import fr.laurent.librairieProject.exception.ExceptionValeurNull;
 public class LibrairieService {
 	// ================Propriete================
 	private Librairie librairie;
+	private DaoLibrairie daoLibrairie;
 
 	// ================Constructeur================
 	public LibrairieService() {
 		librairie = new Librairie();
+		daoLibrairie = new DaoLibrairie();
+		daoLibrairie.initLibrairie(librairie);
 	}
 
 	// ================Getter================
