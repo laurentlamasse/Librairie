@@ -4,55 +4,54 @@ import fr.laurent.librairieProject.exception.ExceptionMontantNegatif;
 
 /**
  * 
- * @author Laurent
- * Classe décrivant un article. Un article contient un prix et le nom du fournisseur
+ * @author Laurent Classe décrivant un article. Un article contient un prix et
+ *         le nom du fournisseur
  */
 public abstract class Article {
 
-	//================Attributs================
+	// ================Attributs================
 	protected float prix;
 	private String fournisseur;
-	
-	//================Constructeurs================
-	public Article(float pPrix, String pFournisseur) throws ExceptionMontantNegatif
-	{
-		if(pPrix<0)
+
+	// ================Constructeurs================
+	public Article(float pPrix, String pFournisseur) throws ExceptionMontantNegatif {
+		if (pPrix < 0)
 			throw new ExceptionMontantNegatif();
 		this.prix = pPrix;
 		this.fournisseur = pFournisseur;
 	}
-	
-	public Article(float pPrix) throws ExceptionMontantNegatif
-	{
+
+	public Article(float pPrix) throws ExceptionMontantNegatif {
 		this(pPrix, "Dupont");
 	}
-	
-	public Article(String pFournisseur) throws ExceptionMontantNegatif
-	{
+
+	public Article(String pFournisseur) throws ExceptionMontantNegatif {
 		this(10, pFournisseur);
 	}
-	
-	public Article() throws ExceptionMontantNegatif
-	{
+
+	public Article() throws ExceptionMontantNegatif {
 		this(10, "Dupont");
 	}
-	
-	//================Getters et Setters================
+
+	// ================Getters et Setters================
 	public float getPrix() {
 		return prix;
 	}
+
 	public void setPrix(float prix) throws ExceptionMontantNegatif {
-		if(prix<0)
+		if (prix < 0)
 			throw new ExceptionMontantNegatif();
 		this.prix = prix;
 	}
+
 	public String getFournisseur() {
 		return fournisseur;
 	}
+
 	public void setFournisseur(String fournisseur) {
 		this.fournisseur = fournisseur;
 	}
-	
+
 	// ================Methode================
 	@Override
 	public String toString() {
@@ -60,6 +59,4 @@ public abstract class Article {
 		resultat += "Fournisseur : " + fournisseur;
 		return resultat;
 	}
-	
-	public abstract void solder(float pourcentage);
 }

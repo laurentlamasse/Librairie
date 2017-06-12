@@ -184,16 +184,4 @@ public class Livre extends Article {
 		if(pType == null)
 			throw new ExceptionValeurNull("Le type du livre est null.");
 	}
-
-	@Override
-	public void solder(float pourcentage) {
-		float pourcentageSolde = pourcentage;
-		if(pourcentageSolde > 1.0f)
-			pourcentageSolde = 1.0f;
-		else if(pourcentageSolde < 0.0f)
-			pourcentageSolde = 0.0f;
-		
-		prix -= prix*pourcentageSolde;
-		System.out.println("Le livre \""+titre+"\" a ete solde de " + pourcentage*100f +"%");
-	}
 }

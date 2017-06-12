@@ -1,7 +1,7 @@
 #ignorer tous les fichiers dans le répertoire bin
 bin/
 
-#ignorer les fichiers en byte code (.class)
+#ignorer les fichiers en bytecode (.class)
 *.class
 
 #ignorer les fichiers de la documentation

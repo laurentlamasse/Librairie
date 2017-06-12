@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import fr.laurent.librairieProject.domaine.Librairie;
 import fr.laurent.librairieProject.service.ClienteleService;
+import fr.laurent.librairieProject.service.LibrairieService;
 
 public class LibrairieMenu {
 
@@ -43,12 +44,12 @@ public class LibrairieMenu {
 
 	public void useMenu() {
 		// Declaration des variables pour les services
-		Librairie librairieService;
+		LibrairieService librairieService;
 		ClienteleService clienteleService;
 
 		// Instanciations des services
+		librairieService = new LibrairieService();
 		clienteleService = new ClienteleService();
-		librairieService = clienteleService.getLibrairie();
 
 		Boolean continuer = true;
 		Integer idClient, idLivre;
